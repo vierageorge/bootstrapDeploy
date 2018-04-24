@@ -59,7 +59,7 @@ Make the poll app modifiable in admin, modifying **polls/admin.py**. Then add so
 
 
 ## Deployment in Pythonanywhere
-
+Go to [Pythonanywhere](https://wwww.pythonanywhere.com) and LogIn or create an account. Open a console and clone your repo.
 
 ## Authors
 * **Jorge Viera** - *Initial work* - [vierageorge](https://github.com/Vierageorge)
