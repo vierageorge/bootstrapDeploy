@@ -78,6 +78,24 @@ Create database (migrate) and create superuser
 python manage.py migrate
 python manage.py createsuperuser
 ```
+After that, return to Dashboard and create a New Web App
+- Manual Configuration
+- Add path to virtualenv (/home/vierageorge/bootstrapDeploy/bootstrapDeploy_env)
+Modify WGSI file:
+```
+import os
+import sys
+
+path = '/home/vieragoerge/bootstrapDeploy'
+if path not in sys.path:
+    sys.path.append(path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'bootstrapDeploy.settings'
+
+from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
+application = DjangoWhiteNoise(get_wsgi_application())
+```
 
 ## Authors
 * **Jorge Viera** - *Initial work* - [vierageorge](https://github.com/Vierageorge)
