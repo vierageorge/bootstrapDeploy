@@ -59,7 +59,25 @@ Make the poll app modifiable in admin, modifying **polls/admin.py**. Then add so
 
 
 ## Deployment in Pythonanywhere
-Go to [Pythonanywhere](https://wwww.pythonanywhere.com) and LogIn or create an account. Open a console and clone your repo.
+Go to [Pythonanywhere](https://wwww.pythonanywhere.com) and LogIn or create an account. Open a Console and clone repo:
+```
+git clone https://github.com/vierageorge/bootstrapDeploy.git
+```
+Create a virtual environment and activate it. Install in it djando and whitenoise
+```
+virtualenv --python=python3.6 bootstrapDeploy_env
+source bootstrapDeploy_env/bin/activate
+pip install django whitenoise
+```
+Collect static files
+```
+python manage.py collectstatic
+```
+Create database (migrate) and create superuser
+```
+python manage.py migrate
+python manage.py createsuperuser
+```
 
 ## Authors
 * **Jorge Viera** - *Initial work* - [vierageorge](https://github.com/Vierageorge)
