@@ -55,8 +55,16 @@ python manage.py createsuperuser
 ```
 Make the poll app modifiable in admin, modifying **polls/admin.py**. Then add some sample Posts using the admin site.
 
-### Working with views.
+### Working with URLs.
+Modify **bootstrapDeply/urls.py** and include in it instructions to redirecto to **blog/urls.py**. Create file **blog/urls.py** and add urlpatterns to it.
 
+### Working with views.
+Modify **blog/views.py** and add information for post_list view. The HelloWorld of the template calling.
+```
+def post_list(request):
+    return render(request, 'blog/post_list.html', {})
+```
+To make it work, `os.path.join(BASE_DIR,'templates')` has to be added to the TEMPLATE setting, on DIRECTORY
 
 ## Deployment in Pythonanywhere
 Go to [Pythonanywhere](https://wwww.pythonanywhere.com) and LogIn or create an account. Open a Console and clone repo:
@@ -96,6 +104,7 @@ from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 application = DjangoWhiteNoise(get_wsgi_application())
 ```
+Press RELOAD on the WebApp on PythonAnywhere and the App is Online.
 
 ## Authors
 * **Jorge Viera** - *Initial work* - [vierageorge](https://github.com/Vierageorge)
