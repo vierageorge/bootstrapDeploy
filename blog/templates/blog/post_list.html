@@ -1,1 +1,17 @@
-<h1>Hello World!</h1>
+<html>
+  <head>
+    <title>Vierageorge's Blog</title>
+  </head>
+  <body>
+    <div>
+      <h1><a href="/">Vierageorge's Blog</a></h1>
+    </div>
+    {% for post in posts %}
+    <div>
+      <p>Published: {{post.published_date}}</p>
+      <h2><a href="">{{post.title}}</a></h2>
+      <p>{{post.text | linebreaksbr}}</p>
+    </div>
+    {% endfor %}
+  </body>
+</html>
